@@ -1,10 +1,11 @@
 <?php
 include_once('connection.php');
 $tbl_name = "changeresume";
-
+$tbl_skill = "skills";
 
 
 $sql = "SELECT * FROM $tbl_name";
+$sql_skill = "SELECT * FROM $tbl_skill";
 
 
             
@@ -91,21 +92,69 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
           <hr>
 
           <p class="w3-large"><b><i class="fa fa-asterisk fa-fw w3-margin-right w3-text-teal"></i>Skills</b></p>
-          <p>Child and adolescent therapist</p>
+          <p>
+          <?php
+          $result = mysqli_query($conn, $sql_skill);
+
+            if (mysqli_num_rows($result) > 0) {
+             while($row = mysqli_fetch_assoc($result)) {
+              echo  $row["skill1"];
+                }
+               } else {
+              echo "0 results";
+            }
+            ?>
+          </p>
           <div class="w3-light-grey w3-round-xlarge w3-small">
             <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:90%">90%</div>
           </div>
-          <p>Schema therapist</p>
+          <p>
+          <?php
+          $result = mysqli_query($conn, $sql_skill);
+
+            if (mysqli_num_rows($result) > 0) {
+             while($row = mysqli_fetch_assoc($result)) {
+              echo  $row["skill2"];
+                }
+               } else {
+              echo "0 results";
+            }
+            ?>
+          </p>
           <div class="w3-light-grey w3-round-xlarge w3-small">
             <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:80%">
               <div class="w3-center w3-text-white">80%</div>
             </div>
           </div>
-          <p>Academic adviser</p>
+          <p>
+          <?php
+          $result = mysqli_query($conn, $sql_skill);
+
+            if (mysqli_num_rows($result) > 0) {
+             while($row = mysqli_fetch_assoc($result)) {
+              echo  $row["skill3"];
+                }
+               } else {
+              echo "0 results";
+            }
+            ?>
+          </p>
           <div class="w3-light-grey w3-round-xlarge w3-small">
             <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:75%">75%</div>
           </div>
-          <p>Pre-Marriage Counseling</p>
+          <p>
+          <?php
+          $result = mysqli_query($conn, $sql_skill);
+
+            if (mysqli_num_rows($result) > 0) {
+             while($row = mysqli_fetch_assoc($result)) {
+              echo  $row["skill4"];
+                }
+               } else {
+              echo "0 results";
+            }
+            ?>
+          </p>
           <div class="w3-light-grey w3-round-xlarge w3-small">
             <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:50%">70%</div>
           </div>
