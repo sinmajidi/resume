@@ -2,10 +2,12 @@
 include_once('connection.php');
 $tbl_name = "changeresume";
 $tbl_skill = "skills";
+$tbl_language = "lanquage";
 
 
 $sql = "SELECT * FROM $tbl_name";
 $sql_skill = "SELECT * FROM $tbl_skill";
+$sql_language = "SELECT * FROM $tbl_language";
 
 
             
@@ -207,13 +209,60 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
           <br>
 
           <p class="w3-large w3-text-theme"><b><i class="fa fa-globe fa-fw w3-margin-right w3-text-teal"></i>Languages</b></p>
-          <p>Persian</p>
+          <p>
+          <?php
+          $result = mysqli_query($conn, $sql_language);
+
+            if (mysqli_num_rows($result) > 0) {
+             while($row = mysqli_fetch_assoc($result)) {
+              echo  $row['language1'];
+
+            }
+            } else {
+              echo "0 results";
+            }
+            ?>
+          </p>
           <div class="w3-light-grey w3-round-xlarge">
-            <div class="w3-round-xlarge w3-teal" style="height:24px;width:100%"></div>
+          <?php
+          $result = mysqli_query($conn, $sql_language);
+
+            if (mysqli_num_rows($result) > 0) {
+             while($row = mysqli_fetch_assoc($result)) {
+              echo  " <div class='w3-round-xlarge w3-teal w3-center' style='height:24px;width:".$row['language1_percent']."'>".$row['language1_percent']."</div>";
+
+            }
+            } else {
+              echo "0 results";
+            }
+            ?>
+        
           </div>
-          <p>English</p>
+          <p><?php
+          $result = mysqli_query($conn, $sql_language);
+
+            if (mysqli_num_rows($result) > 0) {
+             while($row = mysqli_fetch_assoc($result)) {
+              echo  $row['language2'];
+
+            }
+            } else {
+              echo "0 results";
+            }
+            ?></p>
           <div class="w3-light-grey w3-round-xlarge">
-            <div class="w3-round-xlarge w3-teal" style="height:24px;width:55%"></div>
+          <?php
+          $result = mysqli_query($conn, $sql_language);
+
+            if (mysqli_num_rows($result) > 0) {
+             while($row = mysqli_fetch_assoc($result)) {
+              echo  " <div class='w3-round-xlarge w3-teal w3-center' style='height:24px;width:".$row['language2_percent']."'>".$row['language2_percent']."</div>";
+
+            }
+            } else {
+              echo "0 results";
+            }
+            ?>
           </div>
 
           <br>
