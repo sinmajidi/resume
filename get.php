@@ -106,7 +106,19 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
             ?>
           </p>
           <div class="w3-light-grey w3-round-xlarge w3-small">
-            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:90%">90%</div>
+           
+            <?php
+          $result = mysqli_query($conn, $sql_skill);
+
+            if (mysqli_num_rows($result) > 0) {
+             while($row = mysqli_fetch_assoc($result)) {
+              echo  " <div class='w3-container w3-center w3-round-xlarge w3-teal' style='width:".$row['skill_1_result']."'>".$row['skill_1_result']."</div>";
+
+                }
+               } else {
+              echo "0 results";
+            }
+            ?>
           </div>
           <p>
           <?php
@@ -122,9 +134,21 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
             ?>
           </p>
           <div class="w3-light-grey w3-round-xlarge w3-small">
-            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:80%">
-              <div class="w3-center w3-text-white">80%</div>
-            </div>
+          <?php
+          $result = mysqli_query($conn, $sql_skill);
+
+            if (mysqli_num_rows($result) > 0) {
+             while($row = mysqli_fetch_assoc($result)) {
+              echo  " <div class='w3-container w3-center w3-round-xlarge w3-teal' style='width:".$row['skill_2_result']."'>".$row['skill_2_result']."</div>";
+
+            }
+            } else {
+              echo "0 results";
+            }
+            ?>
+        
+    
+           
           </div>
           <p>
           <?php
@@ -140,7 +164,18 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
             ?>
           </p>
           <div class="w3-light-grey w3-round-xlarge w3-small">
-            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:75%">75%</div>
+          <?php
+          $result = mysqli_query($conn, $sql_skill);
+
+            if (mysqli_num_rows($result) > 0) {
+             while($row = mysqli_fetch_assoc($result)) {
+              echo  " <div class='w3-container w3-center w3-round-xlarge w3-teal' style='width:".$row['skill_3_result']."'>".$row['skill_3_result']."</div>";
+
+            }
+            } else {
+              echo "0 results";
+            }
+            ?>
           </div>
           <p>
           <?php
@@ -156,7 +191,18 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
             ?>
           </p>
           <div class="w3-light-grey w3-round-xlarge w3-small">
-            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:50%">70%</div>
+          <?php
+          $result = mysqli_query($conn, $sql_skill);
+
+            if (mysqli_num_rows($result) > 0) {
+             while($row = mysqli_fetch_assoc($result)) {
+              echo  " <div class='w3-container w3-center w3-round-xlarge w3-teal' style='width:".$row['skill_4_result']."'>".$row['skill_4_result']."</div>";
+
+            }
+            } else {
+              echo "0 results";
+            }
+            ?>
           </div>
           <br>
 
