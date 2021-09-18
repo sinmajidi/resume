@@ -6,7 +6,7 @@
 </head>
   
 <body>
-    <form action="adminpanel.php" method="post">
+    <form action="adminpanel.php" method="post" enctype="multipart/form-data">
         <div>
            
   
@@ -46,6 +46,8 @@
            change the language1:<input type="text" placeholder="set language2"name="language2" value="">
            <br>
            change the language1 percentage:<input type="text" placeholder="set language2 percentage"name="language2_result" value="">
+           <br>
+           Send this file: <input type="file" name="fileToUpload" id="fileToUpload">
            <br>
             <input class="button" type="submit"
                      name="login" value="change">

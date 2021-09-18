@@ -3,11 +3,13 @@ include_once('connection.php');
 $tbl_name = "changeresume";
 $tbl_skill = "skills";
 $tbl_language = "lanquage";
+$tbl_avatar="avatar";
 
 
 $sql = "SELECT * FROM $tbl_name";
 $sql_skill = "SELECT * FROM $tbl_skill";
 $sql_language = "SELECT * FROM $tbl_language";
+$sql_avatar = "SELECT * FROM $tbl_avatar";
 
 
             
@@ -38,7 +40,17 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
     
       <div class="w3-white w3-text-grey w3-card-4">
         <div class="w3-display-container">
-          <img src="1223.jpg" style="width:100%" alt="Avatar">
+          <img src="<?php
+          $result = mysqli_query($conn, $sql_avatar);
+
+            if (mysqli_num_rows($result) > 0) {
+             while($row = mysqli_fetch_assoc($result)) {
+              echo  $row["filepath"];
+                }
+               } else {
+              echo "0 results";
+            }
+            ?>" style="width:100%" alt="Avatar">
           <div class="w3-display-bottomleft w3-container w3-text-black">
             <?php
           $result = mysqli_query($conn, $sql);
