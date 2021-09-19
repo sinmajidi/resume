@@ -4,12 +4,13 @@ $tbl_name = "changeresume";
 $tbl_skill = "skills";
 $tbl_language = "lanquage";
 $tbl_avatar="avatar";
-
+$tbl_education="education";
 
 $sql = "SELECT * FROM $tbl_name";
 $sql_skill = "SELECT * FROM $tbl_skill";
 $sql_language = "SELECT * FROM $tbl_language";
 $sql_avatar = "SELECT * FROM $tbl_avatar";
+$sql_education = "SELECT * FROM $tbl_education";
 
 
             
@@ -312,15 +313,81 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
         <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Education</h2>
         
         <div class="w3-container">
-          <h5 class="w3-opacity"><b>University of Tehran Medical sciences</b></h5>
-          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>2018 - 2020</h6>
-          <p>Master Degree</p>
+          <h5 class="w3-opacity"><b><?php
+          $result = mysqli_query($conn, $sql_education);
+
+            if (mysqli_num_rows($result) > 0) {
+             while($row = mysqli_fetch_assoc($result)) {
+              echo  $row['place_1'];
+
+            }
+            } else {
+              echo "0 results";
+            }
+            ?></b></h5>
+          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i><?php
+          $result = mysqli_query($conn, $sql_education);
+
+            if (mysqli_num_rows($result) > 0) {
+             while($row = mysqli_fetch_assoc($result)) {
+              echo  $row['date_start_1']."-".$row['data_finished_1'];
+
+            }
+            } else {
+              echo "0 results";
+            }
+            ?></h6>
+          <p><?php
+          $result = mysqli_query($conn, $sql_education);
+
+            if (mysqli_num_rows($result) > 0) {
+             while($row = mysqli_fetch_assoc($result)) {
+              echo  $row['topic_1'];
+
+            }
+            } else {
+              echo "0 results";
+            }
+            ?></p>
           <hr>
         </div>
         <div class="w3-container">
-          <h5 class="w3-opacity"><b>Sooreh university</b></h5>
-          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>2013 - 2017</h6>
-          <p>Bachelor Degree</p>
+          <h5 class="w3-opacity"><b><?php
+          $result = mysqli_query($conn, $sql_education);
+
+            if (mysqli_num_rows($result) > 0) {
+             while($row = mysqli_fetch_assoc($result)) {
+              echo  $row['place_2'];
+
+            }
+            } else {
+              echo "0 results";
+            }
+            ?></b></h5>
+          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i><?php
+          $result = mysqli_query($conn, $sql_education);
+
+            if (mysqli_num_rows($result) > 0) {
+             while($row = mysqli_fetch_assoc($result)) {
+              echo  $row['date_start_2']."-".$row['data_finished_2'];
+
+            }
+            } else {
+              echo "0 results";
+            }
+            ?></h6>
+          <p><?php
+          $result = mysqli_query($conn, $sql_education);
+
+            if (mysqli_num_rows($result) > 0) {
+             while($row = mysqli_fetch_assoc($result)) {
+              echo  $row['topic_2'];
+
+            }
+            } else {
+              echo "0 results";
+            }
+            ?></p>
           <hr>
         </div>
        
