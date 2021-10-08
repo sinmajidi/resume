@@ -1,7 +1,7 @@
 
     body {
       font-family: Arial, Helvetica, sans-serif;
-      background-color: rgb(114, 114, 107);
+      background-color: rgb(0, 0, 0);
       direction:ltr;
       display: flex;
       
@@ -85,7 +85,7 @@
       -webkit-user-select: none;
       touch-action: manipulation;
       vertical-align: middle;
-      width: 100%;
+      width: 60%;
       
     }
     
@@ -202,14 +202,12 @@
     }
     .grid-container {
       display: grid;
-      
-      grid-template-columns: auto auto ;
+      grid-template-columns: 40% 60% ;
       background-color: rgba(4, 165, 117, 0.5);
       padding: 10px;
     }
     .grid-item {
       background-color:rgba(4, 165, 117, 0.5);
-     
       padding: 1px;
       font-size: 25px;
       text-align: left;
